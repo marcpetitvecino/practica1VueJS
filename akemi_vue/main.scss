@@ -1,0 +1,597 @@
+@font-face {
+
+    font-family: Orator;
+    src: url("media/fonts/Orator-Std-Medium_34151.ttf");
+
+}
+
+$colorbox: lightgray;
+
+* {
+
+    box-sizing: border-box;
+
+}
+
+body {
+
+    background-image: url("media/imgs/bg.png");
+    margin: auto;
+    width: 1080px;
+
+}
+
+%boxpadding {
+
+    padding: {
+
+        top: 20px;
+        right: 0px;
+        left: 10px;
+        bottom: 0px;
+
+    }
+
+    margin: {
+
+        top: 0px;
+        right: 0px;
+        left: 0px;
+        bottom: 35px;
+
+    }
+}
+
+%headerbox {
+
+    background-color: lighten($colorbox, 5%);
+    display: inline-block;
+    
+    ul {
+
+        padding-left: 0px;
+
+        li {
+
+            list-style-type: none;
+            font-family: Orator;
+            padding-left: 0px;
+            text-transform: uppercase;
+    
+            &:hover {
+    
+                color: lighten(blue, 20%);
+                list-style-image: url("media/imgs/bg_menu_active.png");
+                position: relative;
+                left: -10px;
+                list-style-position: inside;
+    
+            }
+        }
+    }
+}
+
+#headerbox1{
+
+    @extend %headerbox;
+    @extend %boxpadding;
+    display: inline-block;
+
+}
+
+#headerbox2 {
+
+    @extend %headerbox;
+    @extend %boxpadding;
+    background-color: lighten($colorbox, 10%);
+    display: inline-block;
+
+}
+
+#cart {
+
+    background-color: black;
+    color: gray;
+    font-family: Orator;
+    text-transform: uppercase;
+    list-style-type: none;
+    @extend %boxpadding;
+    padding-bottom: 10px;
+    display: inline-block;
+
+}
+
+.white {
+
+    color: white;
+
+}
+
+#banner {
+
+    width: 100%;
+
+    img {
+
+        width: 100%;
+        border: 10px solid white;
+        box-shadow: 5px 5px 5px lighten(gray, 25%);
+
+    }
+
+    padding: {
+
+        top: 0px;
+        right: 5px;
+        bottom: 20px;
+        left: 0px;
+
+    }
+}
+
+#productes {
+
+    padding: {
+        
+        top: 20px;
+        bottom:25px;
+
+    }
+}
+
+#offer1, #offer2, #offer3 {
+
+    margin-right: 10px;
+
+}
+
+.etiqueta {
+
+    width: 30px !important;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    position: absolute;
+    left: 223px;
+    bottom: 2px;
+
+}
+
+.etiquetab {
+
+    width: 30px !important;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    position: absolute;
+    left: 224px;
+    bottom: 2px;
+
+}
+
+.etiquetac {
+    
+    width: 75px !important;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    position: absolute;
+    left: 178px;
+    bottom: 2px;
+
+}
+
+#offer1, #offer2, #offer3, #offer4 {
+
+    box-shadow: 4px 4px 5px lightgray;
+    height: 245px;
+    width: 24%;
+    background-color: white;
+    padding-bottom: 20px;
+
+    img {
+
+        width: 100%;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+    }
+}
+
+p {
+
+    font-family: Orator;
+
+}
+
+.row {
+
+    width: 1080px;
+    padding-right: 15px;
+    padding-left: 10px;
+
+}
+
+#logo {
+
+    padding-top: 20px;
+
+}
+
+.container {
+
+    background-color: white;
+    height: 1200px;
+    width: 1080px;
+
+}
+
+.modal {
+
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+
+}
+
+.modal-content {
+    background-color: #fefefe;
+    margin: 10% auto; /* 15% from the top and centered */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 500px; /* Could be more or less, depending on screen size */
+    height: 500px;
+    text-align: center;
+}
+
+.imgpopup {
+
+    width: 480px;
+
+    padding: {
+
+        right: 20px;
+
+    }
+
+}
+
+.textpopup {
+
+    text-align: center;
+    padding-top: 10px;
+
+}
+
+.preupopup {
+
+    text-align: center;
+    color: lighten(purple, 20%);
+    font-size: 16px;
+
+}
+
+.selectpopup {
+
+    width: 70px;
+
+}
+
+.buttonpopup {
+
+    background-color: black;
+    color: white;
+    font-family: Orator;
+    text-align: center;
+    width: 200px;
+    text-transform: uppercase;
+    padding-top: 5px;
+}
+
+.close1 {
+
+    position: relative;
+    bottom: 455px;
+    left: 100px;
+    
+}
+
+.close2 {
+
+    position: relative;
+    bottom: 438px;
+    left: 100px;
+
+}
+
+.close3 {
+
+    position: relative;
+    bottom: 435px;
+    left: 100px;
+
+}
+
+.close4 {
+
+    position: relative;
+    bottom: 435px;
+    left: 100px;
+
+}
+
+#menumobil {
+
+    display: none;
+    position: absolute;
+    min-width: 160px;
+    z-index: 1;
+    width: 100%;
+
+    #box1mobil, #box2mobil {
+
+        
+        background-color: lighten($colorbox, 5%);
+        display: block;
+        padding-left: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+
+        li {
+            width: 100%;
+
+            list-style-type: none;
+            font-family: Orator;
+            padding-left: 0px;
+            text-transform: uppercase;
+    
+            &:hover {
+    
+                color: lighten(blue, 20%);
+                list-style-image: url("media/imgs/bg_menu_active.png");
+                position: relative;
+                left: -10px;
+                list-style-position: inside;
+    
+            }
+        }
+    }
+    #box2mobil {
+
+        background-color: lighten($colorbox, 10%);
+        margin-top: -10px;
+
+    }
+
+    #cartmobil {
+
+        background-color: black;
+        color: gray;
+        font-family: Orator;
+        text-transform: uppercase;
+        list-style-type: none;
+        @extend %boxpadding;
+        padding-bottom: 10px;
+        display: block;
+        margin-top: -10px;
+
+    }
+
+}
+
+#botomenumobil {
+
+    display: none;
+    z-index: 3;
+
+}
+
+.botocutre {
+
+    width: 35px;
+    height: 5px;
+    background-color: black;
+    margin: 6px 0;
+
+}
+
+.show {
+
+    display: block;
+
+}
+
+#contenidormenumobil {
+
+    position: relative;
+    display: block;
+    width: 100%;
+
+}
+
+@media only screen and (max-width: 576px) {
+    /* Mobils */
+
+    #offer1, #offer2, #offer3, #offer4 {
+
+        text-align: center;
+        width: 100%;
+        height: 375px;
+
+        padding : {
+
+            top: 5px;
+            bottom: 20px;
+            right: 50px;
+            left: 50px;
+        }
+
+        margin-bottom: 20px;
+        
+        img {
+
+            width: 100%;
+
+        }
+
+    }
+
+    body {
+
+        width: 500px;
+
+    }
+    .row {
+
+        width: 500px;
+
+    }
+    .container {
+
+        width: 500px;
+
+    }
+
+    #headerbox1, #headerbox2, #cart {
+
+        display: none;
+
+    }
+
+    #botomenumobil {
+
+        display: inline-block;
+        padding-left: 75px;
+        position: relative;
+        top: 20px;
+        left: 30px;
+        margin-top: -10px;
+    }
+
+    .etiqueta {
+
+        display: none;
+
+    }
+
+    .etiquetab {
+
+        display: none;
+
+    }
+
+    .etiquetac {
+
+        display: none;
+
+    }
+
+    #logo {
+
+        padding : {
+
+            bottom: 15px;
+            right: 0px;
+            top: 20px;
+
+        }
+        
+        width: 95%;
+
+    }
+
+}
+
+@media only screen and (max-width: 767px) and (min-width: 577px) {
+    /* Tablets */
+
+    #offer1, #offer2, #offer3, #offer4 {
+
+        text-align: center;
+        width: 48%;
+        height: 310px;
+        
+        padding:  {
+
+            top: 10px;
+            bottom: 40px;
+            right: 40px;
+            left: 20px;
+
+        }
+
+        img {
+
+            width: 100%;
+
+        }
+
+    }
+
+    #offer1, #offer3 {
+
+        margin-right: 10px;
+
+    }
+
+    #offer3, #offer4 {
+
+        margin-top: 10px;
+
+    }
+
+    #logo {
+
+        img {
+
+            width: 100%;
+
+        }
+    }
+
+    #headerbox1, #headerbox2, #cart {
+
+        width: 16.6%;
+
+    }
+
+    body {
+
+        width: 700px;
+
+    }
+    .row {
+
+        width: 700px;
+
+    }
+    .container {
+
+        width: 700px;
+
+    }
+
+    .etiqueta {
+
+        position: relative;
+        left: 157px;
+        top: 23px;
+    }
+
+    .etiquetab {
+
+        position: relative;
+        left: 157px;
+        top: 4px;
+    }
+
+    .etiquetac {
+
+        left: 249px;
+        top: 277px;
+    }
+} 

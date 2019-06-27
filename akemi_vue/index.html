@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script type="text/javascript" src = "/js/jquery.min.js"></script>
+    <script type="text/javascript" src = "https://code.jquery.com/ui/1.12.0/jquery-ui.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.19.0/axios.js"></script>
+    <link rel="stylesheet" href="/css/bootstrap.css">
+    <link rel="stylesheet" href="/css/main.css">
+    <title>Pràctica 1</title>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+
+        <div class="col-md-5 col-sm-5 col-xs-5" id="logo" >
+
+            <img src="/imgs/logo_akemi.png" alt="logo akemi">
+
+            <button id="botomenumobil"><div class="botocutre"></div>
+                <div class="botocutre"></div>
+                <div class="botocutre" ></div>
+                </button>
+
+        </div>
+
+        <div id="contenidormenumobil">
+
+            <div id="menumobil">
+
+            <ul id="box1mobil">
+
+                <li>Products</li>
+                <li>Brands</li>
+                <li>Akemi sets</li>
+
+            </ul>
+
+            <ul id="box2mobil">
+
+                <li>About us</li>
+                <li>Register</li>
+                <li>Login</li>
+
+            </ul>
+
+            <ul id="cartmobil">
+
+                <li class="white">Cart</li>
+                <li id="numeroarticlesmobil">0 items</li>
+                <li id="dinerstotalsmobil">0.0€</li>
+
+            </ul>
+
+        </div>
+
+        </div>
+        
+        <div class="col-md-1 col-sm-1 col-xs-1" id="separacio">
+
+            <!--Espai d'una columna-->
+
+        </div>
+
+        <div class="col-md-2 col-sm-2 col-xs-2" id="headerbox1">
+
+            <ul>
+
+                <li>Products</li>
+                <li>Brands</li>
+                <li>Akemi sets</li>
+
+            </ul>
+
+        </div>
+
+        <div class="col-md-2 col-sm-2 col-xs-2" id="headerbox2">
+
+            <ul>
+
+                <li>About us</li>
+                <li>Register</li>
+                <li>Login</li>
+
+            </ul>
+            
+        </div>
+        
+        <div class="col-md-2 col-sm-2 col-xs-2" id="cart">
+
+            <li class="white">Cart</li>
+            <li id="numeroarticles">0 items</li>
+            <li id="dinerstotals">0.0€</li>
+            
+        </div>
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-12 col-sm-12 col-xs-12" id="banner">
+
+            <img src="/imgs/banner1.png" alt="scissors">
+
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div class="col-md-6" id="productes">
+
+            <img src="/imgs/new_products.png" alt="new products">
+
+        </div>
+
+    </div>
+
+    <div class="row">
+
+        <div id="app">
+
+            <div style="height: 800px">
+
+                <p class="col-lg-3 col-sm-6 col-xs-12" id="offer1" v-for="(producte, index) in productes.slice(i, j)" v-on:click="show(producte)">
+
+                        <img v-bind:src="`/imgs/offer${index+1}.png`" id="click1" v-if="producte.id < 5">
+                        <img src="/imgs/placeholder.png" v-if="producte.id > 4">
+                        {{producte.nom}}
+                        <img src="/imgs/sign_new_offer_purchase.png" v-if="producte.nou == true" class="etiqueta">
+                        <img src="/imgs/sign_offer.png" v-if="producte.oferta == true" class="etiquetac"> 
+                        
+                </p>  
+
+            </div>
+
+            <div id="botonspagines">
+
+                <button class="btn btn-primary" @click="slide(0,10)">1</button>
+                <button class="btn btn-primary" @click="slide(10,20)">2</button>
+                <button class="btn btn-primary" @click="slide(20,30)">3</button>
+                <button class="btn btn-primary" @click="slide(30,40)">4</button>
+                <button class="btn btn-primary" @click="slide(40,50)">5</button>
+
+            </div>
+
+
+
+            <!--Finestra modal-->
+
+            <div class="modal" id="modal1">
+
+                <div class="modal-content">
+            
+                    <img v-bind:src="imatge" class="imgpopup">
+                    <p class="textpopup">{{nom}}</p>
+                    <p class="preupopup">{{preu}}€</p>
+                    <select class="selectpopup" v-model="quantitat">
+            
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+            
+                    </select>
+                    <button value="comprar" class="buttonpopup" v-on:click="comprar(id)">comprar</button>
+                    <span class="close1" v-on:click="close">&times;</span>
+            
+                </div>
+            
+            </div>
+
+    </div>
+
+<script src="/js/main.js"></script>
+</body>
+</html>
